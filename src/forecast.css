@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+h1 {
+  color: rgb(135, 135, 135);
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+}
+li {
+  list-style: none;
+  color: #878787;
+  font-weight: 100;
+  font-size: 16px;
+  padding: 0 auto;
+  margin: 0 auto;
+  position: relative;
+  left: -32px;
+}
+img {
+  position: relative;
+  width: 80px;
+  top: -20px;
+}
+
+.temp {
+  font-size: 70px;
+}
+.units {
+  font-size: 16px;
+  position: relative;
+  top: -40px;
+  right: -20px;
+  margin-left: -10px;
+  color: rgb(135, 135, 135);
+  cursor: default;
+}
+
+a {
+  cursor: default;
+  color: rgb(135, 135, 135);
+  text-decoration: none;
+}
+.repo-link {
+  text-align: center;
+  color: rgb(76, 76, 233);
+  text-align: center;
+  text-decoration: underline;
+  position: relative;
+}
+small {
+  text-decoration: none;
+  color: rgb(0, 0, 6);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.description::first-letter {
+  text-transform: capitalize;
+}
