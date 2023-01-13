@@ -81,14 +81,14 @@ function displayForecast() {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday",
+    "Saturday"
   ];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
             
-            <div class="col-2"> 
+            <div class="col"> 
                 <div class="weather-forecast-date">${day}</div>
 
                  <img
