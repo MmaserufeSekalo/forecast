@@ -84,3 +84,7 @@ small {
 .min{
   opacity: 0.6;
 }
+.footer{
+  max-width: 600px;
+  margin: 0 auto;
+}

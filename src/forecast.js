@@ -34,10 +34,19 @@ function tempDisplay(response) {
   document.querySelector(".time").innerHTML = hour + ":" + minutes;
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  function getForecast(city) {
+  let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}`;
+
+  axios.get(forecastUrl).then(displayForecast);
+}
+
 }
 function search(city) {
   let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(tempDisplay);
 }
 
@@ -72,7 +81,7 @@ search("Polokwane");
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-
+  console.log(city);
   let forecastHTML = `<div class ="row">`;
   let days = [
     "Sunday",
@@ -81,7 +90,7 @@ function displayForecast() {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   days.forEach(function (day) {
     forecastHTML =
@@ -103,4 +112,3 @@ function displayForecast() {
     forecastElement.innerHTML = forecastHTML;
   });
 }
-displayForecast();
