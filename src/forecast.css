@@ -65,4 +65,22 @@ small {
 
 .description::first-letter {
   text-transform: capitalize;
+}.weather-forecast{
+  margin-top: 20px;
+}
+.weather-forecast-date{
+  margin-bottom: 20px;
+  font-size: 16px;
+  color:#878787
+}
+.forecast-icon{
+  width: 80px;
+}
+.max, .min{
+  font-size: 13px;
+  color: #878787;
+}
+.max{font-weight: 600;}
+.min{
+  opacity: 0.6;
 }
