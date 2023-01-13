@@ -72,18 +72,35 @@ search("Polokwane");
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row>"`;
-  forecastElement =
-    forecastHTML +
-    `<div class="col-2">
-              <div class="weather-forecast-date">Thursday</div>
 
-<img src="https://ssl.gstatic.com/onebox/weather/48/sunny_s_cloudy.png" alt="" class="forecast-icon">
-           <span class="max">18°</span> <span class="min"> 8°</span> 
-          </div>`;
+  let forecastHTML = `<div class ="row">`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            
+            <div class="col-2"> 
+                <div class="weather-forecast-date">${day}</div>
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-  
+                 <img
+                  src="https://ssl.gstatic.com/onebox/weather/48/sunny_s_cloudy.png"
+                  alt=""
+                  class="forecast-icon/>
+                  <div class = "weather-forecast-temperatures>
+                   <span class="max">18°</span> <span class="min"> 8°</span>
+                  </div>
+            </div>`;
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+  });
 }
 displayForecast();
