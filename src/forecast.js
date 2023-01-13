@@ -35,12 +35,7 @@ function tempDisplay(response) {
   iconElement.setAttribute("src", response.data.condition.icon_url);
   iconElement.setAttribute("alt", response.data.condition.description);
 
-  function getForecast(city) {
-  let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
-  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}`;
-
-  axios.get(forecastUrl).then(displayForecast);
-}
+  
 
 }
 function search(city) {
@@ -81,7 +76,7 @@ search("Polokwane");
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  console.log(city);
+
   let forecastHTML = `<div class ="row">`;
   let days = [
     "Sunday",
@@ -95,20 +90,27 @@ function displayForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
-            
-            <div class="col"> 
-                <div class="weather-forecast-date">${day}</div>
-
-                 <img
+      ` <div class="col-2"> 
+        	<div class="weather-forecast-date">${day}</div>
+		<img
                   src="https://ssl.gstatic.com/onebox/weather/48/sunny_s_cloudy.png"
                   alt=""
-                  class="forecast-icon/>
-                  <div class = "weather-forecast-temperatures>
-                   <span class="max">18°</span> <span class="min"> 8°</span>
-                  </div>
-            </div>`;
-    forecastHTML = forecastHTML + `</div>`;
+                  class="forecast-icon "/>
+              	<div class = "weather-forecast-temperatures">
+                	<span class="max">18°</span> <span class="min"> 8°</span>
+                </div>          
+	</div>`;
+    // forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
   });
+  forecastHTML = forecastHTML + `</div>`;
+}
+
+
+
+function getForecast(city) {
+  let apiKey = "b4b16ao0bed60a37cdt0a5dcdf865c3b";
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}`;
+
+  axios.get(forecastUrl).then(displayForecast);
 }
